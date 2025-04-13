@@ -4,7 +4,7 @@ import Gallery from "./components/Gallery";
 //root component of the app 
 function App() {
   // gobal state to hold the list of books 
-  const [tours, setBooks] = useState([]);
+  const [tours, setTours] = useState([]);
 
   // function to remove a book by its ID 
   const removeTour = (id) => {
@@ -13,9 +13,9 @@ function App() {
 
   return (
     <main>
-      <h1>Book Explorer</h1>
+      <h1>Tour Comparison</h1>
       {/*Pass state and handlers down to the BookList component*/}
-      <Gallery tours={tours} setBooks={setBooks} onRemove={removeTour} />
+      <Gallery tours={tours} setTours={setTours} onRemove={removeTour} />
     </main>
   )
 }

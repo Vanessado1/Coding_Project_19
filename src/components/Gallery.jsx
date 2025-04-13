@@ -2,23 +2,24 @@ import React, { useEffect, useState } from "react";
 import TourCard from "./TourCard";
 
 // BookList is responsible for fetching books and rendering the list
-const Gallery = ({ books, setBooks, onRemove }) => {
+const Gallery = ({ tours, setTours, onRemove }) => {
   // Local state to manage loading and errors
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
   // Function to fetch books from the API
-  const fetchBooks = async () => {
+  const fetchTours = async () => {
     try {
-      const res = await fetch("https://course-api.com/react-tours-project");
+      const res = await fetch("/api/react-tours-project");
       const data = await res.json();
-      const trimmed = data.results.map((book) => ({
+      const trimmed = data.map((tour) => ({
         id: tour.id,
         name: tour.name,
-        price: tour.price[0]?.name || "Unknown",
-        info: `Download count: ${tour.download_count}. Subjects: ${tour.subjects.slice(0, 3).join(", ")}`,
+        price: tour.price || "Unknown",
+        info: tour.info,
+        image: tour.image, // Include image for display
       }));
-      setBooks(trimmed);
+      setTours(trimmed);
       setLoading(false);
     } catch (error) {
       console.error("Error fetching tours:", error.message);
@@ -26,8 +27,8 @@ const Gallery = ({ books, setBooks, onRemove }) => {
       setLoading(false);
     }
   };
-
-  // Run fetchBooks once after the component mounts
+  
+  // Run fetchTours once after the component mounts
   useEffect(() => {
     fetchTours();
   }, []);
@@ -42,7 +43,7 @@ const Gallery = ({ books, setBooks, onRemove }) => {
     return <h2>Something went wrong...</h2>;
   }
 
-  // Render if no books remain
+  // Render if no tours remain
   if (tours.length === 0) {
     return (
       <>
@@ -52,7 +53,7 @@ const Gallery = ({ books, setBooks, onRemove }) => {
     );
   }
 
-  // Render the list of BookCards
+  // Render the list of TourCards
   return (
     <section className="tour-list">
       {tours.map((tour) => (

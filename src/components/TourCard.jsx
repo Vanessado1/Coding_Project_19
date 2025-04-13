@@ -7,6 +7,7 @@ const TourCard = ({id, name, info, price, image, onRemove}) => {
 
     return (
         <article className = "tour-card">
+            <img src={image} alt={name} />
             <h3>{name}</h3>
             <h5>{price}</h5>
             <p>
@@ -18,9 +19,9 @@ const TourCard = ({id, name, info, price, image, onRemove}) => {
             </p>
 
             {/*Button to remove the book */}
-            <button className = "btn-remove" onClick ={() => {
-                onRemove(id)
-            }} >Remove Tour</button>
+            <button className = "btn-remove" onClick ={() => {onRemove(id)}} >
+                Remove Tour
+                </button>
         </article>
     )
 }
