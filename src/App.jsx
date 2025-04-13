@@ -1,21 +1,21 @@
 import React, {useState, useSyncExternalStore} from "react";
-import BookList from "./components/Gallery";
+import Gallery from "./components/Gallery";
 
 //root component of the app 
 function App() {
   // gobal state to hold the list of books 
-  const [books, setBooks] = useState([]);
+  const [tours, setBooks] = useState([]);
 
   // function to remove a book by its ID 
-  const removeBook = (id) => {
-    setBooks((prevBooks) => prevBooks.filter((book) => book.id !== id));
+  const removeTour = (id) => {
+    setTours((prevTours) => prevTours.filter((tour) => tour.id !== id));
   };
 
   return (
     <main>
       <h1>Book Explorer</h1>
       {/*Pass state and handlers down to the BookList component*/}
-      <BookList books={books} setBooks={setBooks} onRemove={removeBook} />
+      <Gallery tours={tours} setBooks={setBooks} onRemove={removeTour} />
     </main>
   )
 }
