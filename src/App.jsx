@@ -1,5 +1,5 @@
 import React, {useState, useSyncExternalStore} from "react";
-import BookList from "./components/BookList";
+import BookList from "./components/Gallery";
 
 //root component of the app 
 function App() {

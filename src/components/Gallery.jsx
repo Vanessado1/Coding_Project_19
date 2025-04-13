@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import BookCard from "./BookCard";
+import TourCard from "./TourCard";
 
 // BookList is responsible for fetching books and rendering the list
 const BookList = ({ books, setBooks, onRemove }) => {
@@ -10,7 +10,7 @@ const BookList = ({ books, setBooks, onRemove }) => {
   // Function to fetch books from the API
   const fetchBooks = async () => {
     try {
-      const res = await fetch("https://gutendex.com/books/");
+      const res = await fetch("https://course-api.com/react-tours-project");
       const data = await res.json();
       const trimmed = data.results.map((book) => ({
         id: book.id,
