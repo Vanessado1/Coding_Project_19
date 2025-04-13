@@ -1,6 +1,6 @@
 import React, {useState, useSyncExternalStore} from "react";
 import Gallery from "./components/Gallery";
-import Style from "./style.css";
+import './styles/styles.css';
 //root component of the app 
 function App() {
   // gobal state to hold the list of books 
@@ -13,7 +13,7 @@ function App() {
 
   return (
     <main>
-      <h1>Tour Comparison</h1>
+      <h1>Tour Explorer</h1>
       {/*Pass state and handlers down to the BookList component*/}
       <Gallery tours={tours} setTours={setTours} onRemove={removeTour} />
     </main>

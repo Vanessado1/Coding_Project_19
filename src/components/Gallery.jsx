@@ -10,7 +10,7 @@ const Gallery = ({ tours, setTours, onRemove }) => {
   // Function to fetch books from the API
   const fetchTours = async () => {
     try {
-      const res = await fetch("/api/react-tours-project");
+      const res = await fetch("https://api.allorigins.win/raw?url=https://course-api.com/react-tours-project");
       const data = await res.json();
       const trimmed = data.map((tour) => ({
         id: tour.id,

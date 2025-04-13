@@ -1,0 +1,70 @@
+/* General Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  button {
+    cursor: pointer;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: grey;
+    color: black;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Styling individual tour cards */
+.tour-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: left;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .tour-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .tour-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .tour-card h3 {
+    margin: 10px 0;
+    font-size: 20px;
+  }
+  
+  .tour-card h5 {
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .tour-card p {
+    font-size: 14px;
+    margin: 10px 0;
+    line-height: 1.6;
+  }
+  
+  .tour-card .btn-remove {
+    margin-top: 10px;
+    background-color: grey;
+  }
+  
+  
