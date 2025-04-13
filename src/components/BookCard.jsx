@@ -12,7 +12,7 @@ const BookCard = ({id, title, author, description, onRemove}) => {
 
             <p>
                 {/*Show full description if readMore is true, otherwise a slice*/}
-                {readMore ? description : `${description.substring(0,80)}...`}
+                {(readMore ? description : description.slice(0,80) + "...")}
                 <button onClick = {() => setReadMore(!readMore)}>
                     {/*Toggle button text */}
                     {readMore ? "Show Less" : "Read More"}
