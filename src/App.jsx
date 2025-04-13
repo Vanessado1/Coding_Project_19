@@ -1,6 +1,6 @@
 import React, {useState, useSyncExternalStore} from "react";
 import Gallery from "./components/Gallery";
-
+import Style from "./style.css";
 //root component of the app 
 function App() {
   // gobal state to hold the list of books 
